@@ -1,0 +1,95 @@
+
+.menu ul {
+    display: block;
+    border-radius: 5px;
+    margin-top: 20px;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    width:100%;
+    background-color: rgb(139, 34, 34); 
+    border-bottom: 1px solid #ccc;
+}
+
+.menu li a {
+    font-weight: 550;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;              
+    align-items: center;       
+    justify-content: flex-start; 
+    height: 60px;               
+    padding-left: 20px;         
+    color: white;         
+    font-size: 19px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.menu li:hover {
+    background-color: rgb(226, 96, 96); 
+}
+
+.menu li a:hover {
+    color: #071c3b;
+}
+
+.donhang-container{
+    width: 100%;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.donhang-header, .donhang-row{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.donhang-header{
+    background-color: #f0f0f0;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.donhang-row{
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+
+
+.name, .soluong, .trangthai, .sua, .huydo{
+    width: 10%;
+}
+
+.namesp, .diachi{
+    width: 20%;
+}
+
+.tongtien, .sdt{
+    width: 15%;
+}
+
+.donhang-row a{
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+.sua a{
+    color: #007bff;
+}
+.huydo a{
+    color: rgb(219, 9, 9);
+}
+.donhang-row a:hover{
+    color: #ff9800;
+}

@@ -1,0 +1,45 @@
+[01-Oct-2025 21:43:37 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 21:43:37 Asia/Ho_Chi_Minh] PHP Notice:  Undefined index: bonho in /home/didongvi/public_html/assets/php/xulydonhang.php on line 168
+[01-Oct-2025 21:43:37 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 172
+[01-Oct-2025 21:43:37 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 173
+[01-Oct-2025 21:43:37 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 185
+[01-Oct-2025 21:43:37 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 188
+[01-Oct-2025 21:43:40 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 21:43:40 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 172
+[01-Oct-2025 21:43:40 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 173
+[01-Oct-2025 21:43:40 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 185
+[01-Oct-2025 21:43:40 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 188
+[01-Oct-2025 21:49:53 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 21:49:53 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 172
+[01-Oct-2025 21:49:53 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 173
+[01-Oct-2025 21:49:53 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 185
+[01-Oct-2025 21:49:53 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 188
+[01-Oct-2025 22:01:38 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 22:01:38 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 172
+[01-Oct-2025 22:01:38 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 173
+[01-Oct-2025 22:01:38 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 185
+[01-Oct-2025 22:01:38 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 188
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 18
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 19
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 30
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 33
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 36
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 39
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 42
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 52
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 53
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 54
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 55
+[01-Oct-2025 22:07:21 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 56
+[01-Oct-2025 22:12:50 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 22:12:50 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 172
+[01-Oct-2025 22:12:50 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 173
+[01-Oct-2025 22:12:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 185
+[01-Oct-2025 22:12:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 188
+[01-Oct-2025 22:13:23 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 22:13:50 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'nguoidung'@'localhost' (using password: YES) in /home/didongvi/public_html/includes/header.php on line 41
+[01-Oct-2025 22:13:50 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 172
+[01-Oct-2025 22:13:50 Asia/Ho_Chi_Minh] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, null given in /home/didongvi/public_html/assets/php/xulydonhang.php on line 173
+[01-Oct-2025 22:13:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 185
+[01-Oct-2025 22:13:50 Asia/Ho_Chi_Minh] PHP Notice:  Trying to access array offset on value of type null in /home/didongvi/public_html/assets/php/xulydonhang.php on line 188

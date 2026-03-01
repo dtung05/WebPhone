@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 20px;
+}
+.dangky legend {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #ccc;
+  display: inline-block;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  font-weight: 550;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 8px;
+}
+.dangky form {
+  background: #fff;
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.dangky label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #444;
+}
+.dangky input[type="text"],
+.dangky input[type="number"],
+.dangky input[type="password"],
+.dangky input[type="email"],
+.dangky textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.dangky textarea {
+  resize: vertical;
+  height: 60px;
+}
+.dangky button,
+.dangky input[type="submit"] {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #700a20ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.dangky button:hover,
+input[type="submit"]:hover {
+  background: #db5466ff;
+}
+select {
+  margin-left: 15px;
+  margin-top: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+}

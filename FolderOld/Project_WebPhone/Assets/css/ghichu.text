@@ -1,0 +1,33 @@
+/*  display: none ẩn hẳn nút khỏi trang web, kh chiếm chỗ
+//  visibility: hidden  ẩn nút nhưng vẫn chiếm chỗ
+box-shadow: 0px 8px 16px rgba(0,0,0,0.2); đổ viền
+cursor: pointer; con trỏ chuột khi hover 
+position: relative;  Để dropdown-content có thể position tuyệt đối so với nút , ngăn xuống dòng
+text-decoration: none;  bỏ gạch chân
+//  position: fixed; làm cho phần tử cố định theo cửa sổ trình duyệt mà không bị cuộn khi bạn lăn chuột
+//  z-index: 9999 là xác định thứ tự xếp chồng của phần tử, số càng lớn càng ở trên
+//  transform: translate(-50%, -50%) dùng để dịch chuyển vị trí của phần tử
+text-decoration: none; làm mất gạch chân của thẻ a
+justify-content: space-between; chia đều 3 cột
+
+
+
+
+KẾT NỐI SQL
+/* KẾT NỐI SQL THƯỜNG 
+ketnoi = mysqli_connect('namesever', 'use', 'password','name_database') kết nối vào database
+echo mysqli_connect_errno()                     in ra check lỗi
+mysqli_close(ketnoi);                           đóng kết nối
+ketqua = mysqli_query(ketnoi,truyvan);          lưu kết quả truy vấn vào trong biến kết quả
+mysqli_num_rows(ketqua)                         trả về int số lượng hàng trong bảng;
+row = mysqli_fetch_assoc()                      gán lần lượt từng hàng cho row, tới khi hết trả về null;
+
+
+
+header("Location: index.php"); chuyển về trang
+header("Refresh: 3; url=index.php"); chuyển về sau 3s
+SESSION VS COOKIE
+*/
+fgfgfg
+
+

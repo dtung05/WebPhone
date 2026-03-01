@@ -1,0 +1,28 @@
+ .row {
+            display: flex;
+            width: 95%;
+            border-bottom: 1px solid #ccc;
+            padding: 8px 0;
+            align-items: center;
+        }
+        .row div {
+            padding: 0 5px;
+            word-break: break-word;
+        }
+        .row:hover {
+            background: #f9f9f9;
+        }
+        .header-row {
+            font-weight: bold;
+            background: #eee;
+        }
+        .btn-delete {
+            color: white;
+            background: red;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+        .btn-delete:hover {
+            background: darkred;
+        }
