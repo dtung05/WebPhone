@@ -4,6 +4,7 @@
         public function __construct($conn){
             $this->conn = $conn;
         }
+        // lấy ra danh sách đơn hàng
         public function getListOrder($idUser){
             $sql = "SELECT dh.idorder, mataikhoan,ngaydat,img,
                     trangthai,diachi,sdt,idOrderDetail,
@@ -41,5 +42,20 @@
                
             }
             return $data;
+        }
+        // tạo mới đơn hàng
+        public function MoreOrder($data){
+            $sql = "INSERT INTO donhang (mataikhoan,ngaydat,trangthai,diachi,sdt)
+                    values(:mataikhoan,NOW(),'Chờ xác nhận',:diachi, :sdt)";
+            $query = $this->conn->prepare($sql);
+            $query->execute([
+                ':mataikhoan' => $data['iduser'],
+                ':diachi' => $data['diachi'],
+                ':sdt' => $data['sdt']
+            ]);
+            if($query->Count() != 0 ){
+                 return $this->conn->lastInsertID();
+            }
+            return 0;         
         }
     }

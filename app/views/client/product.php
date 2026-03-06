@@ -18,6 +18,7 @@
 <div class="chon-phien-ban">
     <h3>Chọn phiên bản để xem giá :</h3>
     <h4>Số lượng tồn kho: <?php echo $product['soluong']?></h4>
+    <!-- Form gửi dữ liệu tới giỏ hàng và đơn hàng -->
     <form  method="post">
         <?php
         foreach ($memory as $row){ ?>
@@ -27,12 +28,15 @@
                 <span class='gia'> <?=  number_format($row['gia'], 0, ',', '.'); ?>đ </span>
             </label>
         <?php } ?>
-        <input type="hidden" name="masp" value="<?= $product['masp'];?>">
         <label class="ten">Số lượng:</label>
+        <input type="hidden" name="tensp" value="<?=$product['tensp'];?>">
+        <input type="hidden" name="url" value="<?= $product['mota']; ?>">
         <input type="number" name="soluong" value="1" min="1" required style="padding: 6px;border-radius: 5px;">
+        <input type="hidden" name="masp" value="<?= $product['masp'];?>">
         <br><br>
-        <button type="submit" class="nut-dat" name="giohang" formaction="<?= _WEB_ROOT; ?>/Cart/moreCart">🛒 Thêm giỏ hàng</button>
-        <button type="submit" class="nut-dat" name="dathang1">📦 Đặt hàng</button>
+          <button type="submit" class="nut-dat" name="giohang" formaction="<?= _WEB_ROOT; ?>/Cart/moreCart">Thêm giỏ hàng</button>
+          <button type="submit" class="nut-dat" name="dathang1" formaction="<?= _WEB_ROOT; ?>/Order/openOrder">Đặt hàng</button>
+        
     </form>
     <div>
         <div >

@@ -1,23 +1,9 @@
-<?php
-    include "../../Assets/php/conn.php";
-    include "../../Models/DAO/DAOGioHang.php";
-    include "../../Models/DAO/DAOSanPham.php";
-    $DAOGH = new DAOGioHang();
-    $DAOSP = new DAOSanPham();
-    // Thêm sản phẩm vào trong giỏ + xử lý đặt hàng
-/*
-control trong file này chứa các tác vụ check logic, gọi DAO, nhận post,
-phục vụ việc thêm sản phẩm vào giỏ hàng 
-*/    
-    require_once "../../Controllers/KhachHang/CT_xulygiohang.php";
-?>  
+
 
 <html>
-    <head>
-
-    </head>
+  
     <body>
-        <?php include "../includes/header.php";?>
+
         <div style="width:70%; margin-left:15%; font-family: Arial, sans-serif; 
             border: 1px solid #ccc; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
@@ -66,5 +52,5 @@ phục vụ việc thêm sản phẩm vào giỏ hàng
     </form>
 </div>
     </body>
-    <?php include "../Includes/footer.php";?>
+ 
 </html>

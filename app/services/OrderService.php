@@ -14,7 +14,10 @@
             }catch(PDOException $err){
                 $_SESSION['thongbao'] = $err->getMessage();
             }
+        }
+        
+        // thêm giữ liệu vào giỏ hàng
+        public function OrderProduct(){
             
-
         }
     }
