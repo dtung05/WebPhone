@@ -54,10 +54,11 @@
         public function getProductId($idProduct){
             $sql = "SELECT masp,tensp,gia,mota,soluong,danhmuc_id
                     FROM sanpham
-                    WHERE masp = :masp";
+                    WHERE masp = :masp or tensp like :masp";
             $query = $this->conn->prepare($sql);
             $query->execute([
-                ':masp' => $idProduct
+                ':masp' => $idProduct,
+                ':tensp' => "%$idProduct%"
             ]);
             return $query->fetch();
         }

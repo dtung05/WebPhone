@@ -11,8 +11,8 @@ class Controller{
     }
     // Controller xử lý nhúng service
     public function callService($nameService){ // class  chứa logic xử lý
-        if(file_exists(_DIR_ROOT.'/app/services/'.$nameService.'.php')){
-            require_once _DIR_ROOT.'/app/services/'.$nameService.'.php';
+        if(file_exists(_DIR_ROOT.'/app/client/services/'.$nameService.'.php')){
+            require_once _DIR_ROOT.'/app/client/services/'.$nameService.'.php';
             if(class_exists($nameService)){
                 $Service = new $nameService();
                 return $Service;
@@ -33,9 +33,9 @@ class Controller{
     }
     // method view cần đổi 1 lần chuỗi ra value (key sang biến);
      public function callView($nameView, $data = []){
-        if(file_exists(_DIR_ROOT.'/app/views/'.$nameView.'.php')){
+        if(file_exists(_DIR_ROOT.'/app/client/views/'.$nameView.'.php')){
             extract($data);
-            require_once _DIR_ROOT.'/app/views/'.$nameView.'.php';
+            require_once _DIR_ROOT.'/app/client/views/'.$nameView.'.php';
             return true;
         }
         return false;

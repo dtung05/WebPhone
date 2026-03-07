@@ -3,7 +3,6 @@
         // xử lý chi tiết sản phẩm
         public function ProductDetail($idProduct){
            $service = $this->callService('ProductService');
-
            $daoImg = $this->callDAO('ImgDAO');
            $daoMemory = $this->callDAO('MemoryDAO');
            $daoVideo = $this->callDAO('VideoDAO');
@@ -43,6 +42,24 @@
                 header("location: "._WEB_ROOT."/home");
             }
         }
+    //    // xử lý tìm sản phẩm
+    //     public function ProductFind($brand){
+    //         $keyword = $_POST['keyword'];
+
+    //         $dao = $this->callDAO('ProductDAO');
+    //         $data['products'] = $dao->getProductId($keyword);
+    //         $data['style'] = 'productbrand';
+    //         $data['content'] = 'client/productbrand';
+    //         $data['brand'] = $brand;
+    //         $this->callView('layouts/LayoutClient',$data);
+                
+            
+          
+    //             $_SESSION['thongbao'] = "Lỗi truy cập";
+    //             header("location: "._WEB_ROOT."/home");
+           
+    //     }
+
         // hàm thêm đánh giá sản phẩm
         public function addComment(){
             $comment['id'] = $_SESSION['id'];

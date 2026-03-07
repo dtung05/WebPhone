@@ -8,7 +8,7 @@
             $data = $Service->indexService($DAO);
            
             $data['content']= 'client/index';
-            $data['style'] = 'danhmuc';
+            $data['style'] = 'productbrand';
             $data['script']= 'quangcao';
             $this->callView('layouts/LayoutClient',$data);
         }

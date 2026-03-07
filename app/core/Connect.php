@@ -13,7 +13,7 @@ class Connect{
         ];
         try{
             $this->conn = new PDO($dsn,$user,$pass,$options);
-           
+
         }catch(PDOException $err){
             throw $err;
         }

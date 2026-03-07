@@ -33,17 +33,17 @@ Class App{
         return $url;
     }
     public function handleUrl(){
-        if(file_exists('app/controllers/'.$this->__controller.'.php')){
-            require_once('app/controllers/'.$this->__controller.'.php');
+        if(file_exists('app/client/controllers/'.$this->__controller.'.php')){
+            require_once('app/client/controllers/'.$this->__controller.'.php');
             $controller = new $this->__controller(); // khởi tạo đối tượng
             if(method_exists($controller,$this->__action)){
               call_user_func_array([$controller, $this->__action], $this->__params);// gọi ra phương thức trong đối tượng
             }else{
-                 require_once 'app/views/error/404.php';
+                 require_once 'app/client/views/error/404.php';
                 exit();
             }
         }else{
-            require_once 'app/views/error/404.php';
+            require_once 'app/client/views/error/404.php';
             exit();
         }
     }

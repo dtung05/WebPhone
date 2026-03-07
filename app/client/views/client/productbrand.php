@@ -1,7 +1,7 @@
 
 <html>
     <head>
-        <title>Danh mục <?php echo $_GET['danhmuc'];?></title>
+        <title>Danh mục <?php echo $brand;?></title>
         <link rel="stylesheet" href="/assets/css/danhmuc.css">
     </head>
     <body>

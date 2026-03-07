@@ -1,16 +1,9 @@
 
-<?php 
-include "../../Assets/php/conn.php";
-include_once "../../Models/DAO/DAOSanPham.php";
-$DAOSP = new DAOSanPham(); $timkiem = $_POST['timkiem'];
-$ketqua = $DAOSP->findsanpham($ketnoi,$timkiem);
-?>
 <html>
     <head>
-        <title>Kết quả tìm kiếm <?php echo $_GET['danhmuc'];?></title>
-        <link rel="stylesheet" href="/Assets/css/danhmuc.css">
+        <title>Kết quả tìm kiếm <?php echo $keyword;?></title>
     </head>
-    <body><?php include  "../Includes/header.php";
+    <body>
        
       
     ?>

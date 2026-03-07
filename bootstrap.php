@@ -14,7 +14,7 @@
    global $db_config;
    require_once 'app/core/Connect.php';// gọi connect
   
-    require_once 'app/core/Controller.php';
-    Controller::init($db_config);
-    require_once 'app/App.php';
+   require_once 'app/core/Controller.php';
+   Controller::init($db_config);
+   require_once 'app/App.php';
     
