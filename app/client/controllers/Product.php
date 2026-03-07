@@ -42,23 +42,25 @@
                 header("location: "._WEB_ROOT."/home");
             }
         }
-    //    // xử lý tìm sản phẩm
-    //     public function ProductFind($brand){
-    //         $keyword = $_POST['keyword'];
+       // xử lý tìm sản phẩm
+        public function ProductFind(){
+            $keyword = $_POST['keyword'];
 
-    //         $dao = $this->callDAO('ProductDAO');
-    //         $data['products'] = $dao->getProductId($keyword);
-    //         $data['style'] = 'productbrand';
-    //         $data['content'] = 'client/productbrand';
-    //         $data['brand'] = $brand;
-    //         $this->callView('layouts/LayoutClient',$data);
-                
-            
-          
-    //             $_SESSION['thongbao'] = "Lỗi truy cập";
-    //             header("location: "._WEB_ROOT."/home");
-           
-    //     }
+            $dao = $this->callDAO('ProductDAO');
+            $data['products'] = $dao->getProductId($keyword);
+
+            $size = count($data['products']);
+            if($size == 0 ){
+                $_SESSION['thongbao'] = "Không tìm thấy sản phẩm nào";
+            }else{
+                $_SESSION['thongbao'] = "Tìm thấy $size sản phẩm với từ khóa $keyword";
+            }
+            $data['style'] = 'productbrand';
+            $data['content'] = 'client/productfind';
+            $data['keyword'] = $keyword;
+
+            $this->callView('layouts/LayoutClient',$data);   
+        }
 
         // hàm thêm đánh giá sản phẩm
         public function addComment(){
