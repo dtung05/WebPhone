@@ -9,7 +9,6 @@
                         $data['order'][$row['idorder']]['tongtien'] += $row2['giathanh'];
                     }
                 }
-                
                 return $data;
             }catch(PDOException $err){
                 $_SESSION['thongbao'] = $err->getMessage();
@@ -17,7 +16,16 @@
         }
         
         // thêm giữ liệu vào giỏ hàng
-        public function OrderProduct(){
-            
+        public function openOrder($daoPro,$ListId,$products){
+                $product = $daoPro->getListProductId($ListId);
+                $tmp = 0;
+                $tongtien = 0;
+                foreach ( $products as $row){
+                    $product[$tmp]['soluong'] = $row['soluong'];
+                    $tongtien += $product[$tmp]['gia'] * $row['soluong'];
+                    $tmp++;
+                }
+                $product['thanhtien'] = $tongtien;
+        return $product;
         }
     }

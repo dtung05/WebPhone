@@ -22,6 +22,4 @@ class Connect{
     public function getConnect(){
         return $this->conn;
     }
-
-   
 }

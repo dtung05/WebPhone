@@ -24,7 +24,7 @@
         public function insertCart($daoCart,$data,$daoProduct){
             try{
                 $row = $daoProduct->getProductId($data['idproduct']);
-                if($row['soluong'] < $data['soluong']){
+                if($row['soluong'] > $data['soluong']){
                     $_SESSION['thongbao'] = "Số lượng sản phẩm không hợp lệ";
                     return;
                 }$check = $daoCart->checkProductInCart($data['idproduct'],$data['iduser']);

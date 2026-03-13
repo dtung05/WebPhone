@@ -47,7 +47,7 @@
             $keyword = $_POST['keyword'];
 
             $dao = $this->callDAO('ProductDAO');
-            $data['products'] = $dao->getProductId($keyword);
+            $data['products'] = $dao->searchProduct($keyword);
 
             $size = count($data['products']);
             if($size == 0 ){

@@ -54,6 +54,25 @@
         public function getProductId($idProduct){
             $sql = "SELECT masp,tensp,gia,mota,soluong,danhmuc_id
                     FROM sanpham
+                    WHERE masp = :masp";
+            $query = $this->conn->prepare($sql);
+            $query->execute([
+                ':masp' => $idProduct
+            ]);
+            return $query->fetch();
+        }
+        public function getListProductId($ListId){
+            $placeholders = implode(',', array_fill(0, count($ListId), '?'));
+            $sql = "SELECT sp.masp,tensp,sp.gia,mota as url ,sp.soluong as slkho,danhmuc_id
+                    FROM sanpham as sp
+                    WHERE sp.masp IN ($placeholders)";
+            $query = $this->conn->prepare($sql);
+            $query->execute($ListId);
+            return $query->fetchAll();
+        }
+        public function searchProduct($idProduct){
+            $sql = "SELECT masp,tensp,gia,mota  ,soluong,danhmuc_id
+                    FROM sanpham
                     WHERE masp = :masp or tensp like :tensp";
             $query = $this->conn->prepare($sql);
             $query->execute([

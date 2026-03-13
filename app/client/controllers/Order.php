@@ -20,14 +20,33 @@
             $order['gia'] = $_POST['bonho'];
             $order['soluong'] = $_POST['soluong'];
             $order['url'] = $_POST['url'];
-            App::inarr($order);
+            $order['thanhtien'] = $order['soluong'] * $order['gia'];
+            $data['thanhtien'] = array_pop($order);
+            $data['order'] = [$order];
+           
+            $data['style'] = "ordermore";
             $data['content'] = 'client/ordermore';
-            $this->callView('layouts/LayoutClient',$data);
-            // // gọi các class vào xử lý
-            // $orderDao = $this->callDAO('OrderDAO');
-            // $orderdetailDao = $this->callDAO('OrderDetailDAO');
-            // $service = $this->callService('OrderService');
-            // $service->OrderProduct($orderDao,$orderdetailDao,$Order,$OrderDetai);
+            $this->callView('layouts/LayoutClient',$data);       
+        }
+        public function openOrderInCart(){
+            $ListMasp = $_POST['idProduct'];
+            $SoLuong = $_POST['products'];
             
+            $ProductOrder = []; // lấy ra mã sản phẩm kèm với số lượng
+            foreach ($ListMasp as $row){
+                $ProductOrder[] = [
+                    'masp' => $row,
+                    'soluong' => $SoLuong[$row]['soluong']
+                ];
+            }
+            
+            $daoPro = $this->callDAO('ProductDAO');
+            $service = $this->callService('OrderService');
+            $data['order'] =$service->openOrder($daoPro,$ListMasp,$ProductOrder);
+            $data['thanhtien'] = array_pop($data['order']);
+            $data['style'] = "ordermore";
+            $data['content'] = 'client/ordermore';
+           
+            $this->callView('layouts/LayoutClient',$data); 
         }
     }
