@@ -40,4 +40,24 @@ class Controller{
         }
         return false;
     }
+    // Gọi hàm service tới Staff
+    public function callServiceStaff($nameService){
+        if(file_exists(_DIR_ROOT.'/app/staff/services/'.$nameService.'.php')){
+            require_once _DIR_ROOT.'/app/staff/services/'.$nameService.'.php';
+            if(class_exists($nameService)){
+                $Service = new $nameService();
+                return $Service;
+            }
+        }
+        return false;
+    }
+    // Gọi hàm view của staff
+     public function callViewStaff($nameView, $data = []){
+        if(file_exists(_DIR_ROOT.'/app/staff/views/'.$nameView.'.php')){
+            extract($data);
+            require_once _DIR_ROOT.'/app/staff/views/'.$nameView.'.php';
+            return true;
+        }
+        return false;
+    }
 } 

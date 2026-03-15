@@ -1,11 +1,10 @@
 <?php 
-    class OrderService{
-        
+    class OrderService{  
+         
         // Lấy ra danh sách đơn hàng
         public function getListOrder($daoOrder){
             try{
                 $data['order'] = $daoOrder->getListOrder($_SESSION['id']);
-               
                 if (!empty($data['order'])){
                     $tongtien = 0; //Khai báo tổng tiền
                     foreach($data['order'] as &$row){
@@ -21,6 +20,7 @@
                 $_SESSION['thongbao'] = $err->getMessage();
             }
         }
+
         // thêm giữ liệu vào giỏ hàng
         public function openOrder($daoPro,$ListId,$products){
             $product = $daoPro->getListProductId($ListId);
