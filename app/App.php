@@ -33,7 +33,11 @@ Class App{
         return $url;
     }
     public function handleUrl(){
-        if(file_exists('app/client/controllers/'.$this->__controller.'.php')){
+        if(empty($_SESSION['role'])){
+            $_SESSION['role'] = 'client';
+        }
+        $role = $_SESSION['role'];
+        if(file_exists('app/'.$role .'/controllers/'.$this->__controller.'.php')){
             require_once('app/client/controllers/'.$this->__controller.'.php');
             $controller = new $this->__controller(); // khởi tạo đối tượng
             if(method_exists($controller,$this->__action)){
@@ -42,7 +46,8 @@ Class App{
                  require_once 'app/client/views/error/404.php';
                 exit();
             }
-        }else{
+        }
+        else{
             require_once 'app/client/views/error/404.php';
             exit();
         }
