@@ -3,11 +3,14 @@
 </head>
 <body>
     <div class="checkout-container">
-        <form action="" method="post" style="display:flex; width:100%; gap:30px;">
+        <form action="<?= _WEB_ROOT ?>/Order/addOrder" method="post" style="display:flex; width:100%; gap:30px;">
             <!-- LEFT PRODUCT -->
             <div class="product-box">
                 <h2>Sản phẩm của bạn</h2>
             <?php foreach($order as $row){ ?>
+            <!-- Lấy dữ liệu mã sản phẩm và số lượng -->
+            <input type="hidden" name="product[<?= $row['masp']; ?>][masp]" value="<?= $row['masp'];?>">
+            <input type="hidden" name="product[<?= $row['masp']; ?>][soluong]" value="<?= $row['soluong'];?>">
                 <div class="product-item">
                     <img src="<?php echo $row['url']; ?>">
 
@@ -28,16 +31,16 @@
                 <h2>Thông tin nhận hàng</h2>
 
                 <label>Tên người đặt</label>
-                <input type="text" name="tennguoidat" autofocus placeholder="Nhập tên người đặt" required>
+                <input type="text" name="user[nameuser]" autofocus placeholder="Nhập tên người đặt" required>
 
                 <label>Số điện thoại</label>
-                <input type="number" name="sdt" placeholder="Số điện thoại" required>
+                <input type="number" name="user[sdt]" placeholder="Số điện thoại" required>
 
                 <label>Địa chỉ</label>
-                <textarea name="diachi" placeholder="Nhập địa chỉ nhận hàng" required></textarea>
+                <textarea name="user[diachi]" placeholder="Nhập địa chỉ nhận hàng" required></textarea>
 
                 <label>Hình thức thanh toán</label>
-                <select name="thanhtoan">
+                <select name="user[thanhtoan]">
                     <option value="cod">Thanh toán khi nhận hàng (COD)</option>
                     <option value="bank">Chuyển khoản ngân hàng</option>
                     <option value="momo">Ví MoMo</option>

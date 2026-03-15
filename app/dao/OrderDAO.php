@@ -44,16 +44,18 @@
             return $data;
         }
         // tạo mới đơn hàng
-        public function MoreOrder($data){
-            $sql = "INSERT INTO donhang (mataikhoan,ngaydat,trangthai,diachi,sdt)
-                    values(:mataikhoan,NOW(),'Chờ xác nhận',:diachi, :sdt)";
+        public function addOrder($user){
+            $sql = "INSERT INTO donhang (mataikhoan,ngaydat,trangthai,diachi,sdt,nameuser,thanhtoan)
+                    values(:mataikhoan,NOW(),'Chờ xác nhận',:diachi, :sdt,:nameuser,:thanhtoan)";
             $query = $this->conn->prepare($sql);
             $query->execute([
-                ':mataikhoan' => $data['iduser'],
-                ':diachi' => $data['diachi'],
-                ':sdt' => $data['sdt']
+                ':mataikhoan' => $user['id'],
+                ':diachi' => $user['diachi'],
+                ':sdt' => $user['sdt'],
+                ':nameuser' => $user['nameuser'],
+                ':thanhtoan' => $user['thanhtoan']
             ]);
-            if($query->Count() != 0 ){
+            if($query->rowCount() != 0 ){
                  return $this->conn->lastInsertID();
             }
             return 0;         

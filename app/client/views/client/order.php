@@ -11,7 +11,7 @@
         <a href="">Đã hủy</a>
     </div>
     <hr>
-    <?php if(!empty($order)): ?>
+    <?php if(!empty($order)){ ?>
         <?php foreach($order as $row){ ?>
             <div class="donhang-khung">
                 <div class="hehe">
@@ -38,12 +38,12 @@
                 </div>
             </div>
         <?php } ?>
-    <?php else: ?>
+    <?php } else{ ?>
         <div class="khongco-donhang">
             <p>Bạn chưa đặt sản phẩm nào</p>
             <a href="../index.php" class="btn-ve-trangchu">Về trang chủ</a>
         </div>
-    <?php endif; ?>
+    <?php } ?>
 
 </main>
 

@@ -32,12 +32,12 @@
                 <button class="button1">Danh mục sản phẩm</button>
                 
                 <ul class="danhmuc-content">
-                  <li><a href="<?= _WEB_ROOT; ?>Product/ProductBrand/iphone">Iphone</a></li>
-                  <li><a href="<?= _WEB_ROOT; ?>Product/ProductBrand/xiaomi">Xiaomi</a></li>
+                  <li><a href="<?= _WEB_ROOT; ?>/Product/ProductBrand/iphone">Iphone</a></li>
+                  <li><a href="<?= _WEB_ROOT; ?>/Product/ProductBrand/xiaomi">Xiaomi</a></li>
                 </ul>
             </div>
             <div style="flex: 1">
-              <form action="<?= _WEB_ROOT; ?>Product/ProductFind" method="post">
+              <form action="<?= _WEB_ROOT; ?>/Product/ProductFind" method="post">
                 <div class="timkiem">
                   <input
                     type="search"

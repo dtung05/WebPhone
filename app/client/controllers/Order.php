@@ -4,6 +4,7 @@
             $dao = $this->callDAO('OrderDAO');
             $service = $this->callService('OrderService');
             $data = $service->getListOrder($dao);
+           
             $data['style'] = 'order';
             $data['content'] = 'client/order';
             $this->callView('Layouts/LayoutClient',$data);
@@ -28,6 +29,8 @@
             $data['content'] = 'client/ordermore';
             $this->callView('layouts/LayoutClient',$data);       
         }
+
+        // Mở giao diện đặt hàng trong giỏ hàng
         public function openOrderInCart(){
             $ListMasp = $_POST['idProduct'];
             $SoLuong = $_POST['products'];
@@ -39,14 +42,36 @@
                     'soluong' => $SoLuong[$row]['soluong']
                 ];
             }
-            
             $daoPro = $this->callDAO('ProductDAO');
             $service = $this->callService('OrderService');
             $data['order'] =$service->openOrder($daoPro,$ListMasp,$ProductOrder);
             $data['thanhtien'] = array_pop($data['order']);
             $data['style'] = "ordermore";
             $data['content'] = 'client/ordermore';
-           
             $this->callView('layouts/LayoutClient',$data); 
+        }
+        // Xử lý tạo đơn hàng
+        public function addOrder(){
+            $orderPro = $_POST['product'];
+            $user = $_POST['user'];
+            $user['id'] = $_SESSION['id'];
+           // Gọi các class DAO và service
+           $conn = $this->getConn();
+           $daoPro = $this->callDAO('ProductDAO');
+           $daoOrder = $this->callDAO('OrderDAO');
+           $daoOrderDetail = $this->callDAO('OrderDetailDAO');
+           $service = $this->callService('OrderService');
+           $ketqua = $service->addOrder($orderPro,$user,$daoPro,$daoOrder,$daoOrderDetail,$conn);
+           $_SESSION['thongbao'] = $ketqua['thongbao'];
+           if($ketqua['check'] == true ){
+                header("location: " . _WEB_ROOT. "/Order/getListOrder");
+           }else{
+                $data['order'] = $ketqua['products'];
+                $data['thanhtien'] = $ketqua['giathanh'];
+                $data['style'] = "ordermore";
+                $data['content'] = 'client/ordermore';
+                $this->callView('layouts/LayoutClient',$data); 
+           }
+
         }
     }
