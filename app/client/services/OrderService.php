@@ -1,15 +1,17 @@
 <?php 
     class OrderService{
+        
+        // Lấy ra danh sách đơn hàng
         public function getListOrder($daoOrder){
             try{
                 $data['order'] = $daoOrder->getListOrder($_SESSION['id']);
-                App::inarr($data['order']);
+               
                 if (!empty($data['order'])){
                     $tongtien = 0; //Khai báo tổng tiền
                     foreach($data['order'] as &$row){
                         $data['order'][$row['idorder']]['tongtien'] = 0;
                         foreach($row['product'] as $row2){
-                            $data['order'][$row['idorder']]['tongtien'] += $row2['giathanh'];
+                            $data['order'][$row['idorder']]['tongtien']+= $row2['giathanh']*$row2['soluong'];
                         }
                     }
                 }
@@ -32,8 +34,9 @@
             $product['thanhtien'] = $tongtien;
             return $product;
         }
+
         // Tạo đơn hàng
-        public function addOrder($orderPro,$user, $daoPro,$daoOrder,$daoOrderDetail,$conn){
+    public function addOrder($orderPro,$user, $daoPro,$daoOrder,$daoOrderDetail,$conn){
             // Lấy ra mã sản phẩm
             $listId = array_keys($orderPro);
             //Truy vấn lấy ra list danh sách
@@ -84,5 +87,6 @@
                 ];
            };
         }
-        
-    }
+    //
+    
+}
