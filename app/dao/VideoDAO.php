@@ -14,4 +14,11 @@
             $query->execute($data);
             return $query->fetchAll();
         }
+        public function addVideo($video){
+            $insert = implode(',',array_fill(0,count($video)/2,"(?,?)"));
+            $sql = "INSERT INTO videodanhgia(masp,url)
+                    VALUES $insert ";
+            $query = $this->conn->prepare($sql);
+            return $query->execute($video);
+        }
     }

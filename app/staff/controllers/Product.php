@@ -6,10 +6,24 @@
             if(isset($_SESSION['product']) && isset($_SESSION['detailproduct'])){
                 $data['product'] =$_SESSION['product'];
                 $data['detailproduct'] = $_SESSION['detailproduct'] ;
+                 unset($_SESSION['product']);
+                unset($_SESSION['detailproduct']);
+            }
+            if(isset($_SESSION['memory']) && isset($_SESSION['img']) && $_SESSION['video']){
+                $data['masp'] = $_SESSION['masp'];
+                $data['video'] = $_SESSION['video'];
+                $data['memory'] = $_SESSION['memory'];
+                $data['img'] = $_SESSION['img'];
+                unset($_SESSION['masp']);
+                unset($_SESSION['video']);
+                unset($_SESSION['img']);
+                unset($_SESSION['memory']);
             }
             $data['content'] = 'staff/addProduct';
             $data['style'] = 'addProduct';
             $this->callView('layouts/LayoutStaff',$data);
+            
+               
         }
 
         public function addProduct(){
@@ -43,18 +57,33 @@
             if(!$ketqua['check']){
                 $_SESSION['product'] = $product;
                 $_SESSION['detailproduct'] = $detailproduct;
-            }else{
-                unset($_SESSION['product']);
-                unset($_SESSION['detailproduct']);
             }
             header("location: "._WEB_ROOT."/Product/index");
             exit;
         }
         public function addDetailProduct(){
-            $thongtin = [
+            $thongtin = 
+            [   'masp' => $_POST['masp'] ?? " ",
                 'imgs' => $_POST['img'] ?? [],
                 'videos' => $_POST['video'] ?? [],
                 'memorys' => $_POST['memory'] ?? []
             ];
+            $conn = $this->getConn();
+            $productDao = $this->callDAO('ProductDAO');
+            $imgDao = $this->callDAO('ImgDAO');
+            $videoDAO = $this->callDAO('VideoDAO');
+            $memoryDAO = $this->callDAO('MemoryDAO');
+            $service = $this->callService('ProductService');
+            $ketqua = $service->addDetail($conn, $imgDao,$videoDAO,$memoryDAO,$productDao,$thongtin);
+            if($ketqua['check'] == false){
+                $_SESSION['masp'] = $thongtin['masp'];
+                $_SESSION['memory'] = $thongtin['memorys'];
+                $_SESSION['img'] = $thongtin['imgs'];
+                $_SESSION['video'] = $thongtin['videos'];
+            }
+          
+            $_SESSION['thongbao'] = $ketqua['thongbao'];
+            header("location: "._WEB_ROOT."/Product/index");
+            exit;
         }
     }

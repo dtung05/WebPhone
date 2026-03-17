@@ -7,7 +7,8 @@
 </head>
 <body >
  <hr>
-<?php if(empty($product) && empty($detailproduct)){ ?>
+<?php 
+if(empty($product) && empty($detailproduct)){ ?>
     <div style="flex:1;margin-left:40px" class="dangky">
         <h2 style="text-align:center">Nhập thêm sản phẩm lên web</h2>
             <form action="<?= _WEB_ROOT ?>/Product/addProduct" method="post" style="display:flex;gap:40px">
@@ -167,9 +168,68 @@
                 </div>
             </div>
         </form>
-<?php } ?>
- 
+<?php }if (isset($video) && isset($memory) && isset($img)){ ?>
                 <h2>Thông số phụ</h2>
+                <div style="width:97%;  gap:40px">
+                   
+                    <form action="<?= _WEB_ROOT ?>/Product/addDetailProduct" method="post" style="display:flex; gap:30px"> 
+                        <!-- link ảnh url  -->
+                        <div style="flex:1">
+                            <legend>Hình ảnh sản phẩm </legend><br>
+                            <label for="masp">Mã sản phẩm</label>
+                            <input type="text" name="masp" id="masp" required placeholder="Nhập vào mã sản phẩm." value="<?= $masp; ?>" >
+                            <label for="url">Đường dẫn ảnh (URL)</label>
+                            <input type="text" name="img[]" id="img[]" required placeholder="Mã url 1" value="<?= $img[0]; ?>" ><br><br>
+                            <div style="display:flex;gap:10px">
+                                <input type="text" name="img[]" id="img2" required placeholder="Mã url 2" style="flex:1" value="<?= $img[1]; ?>" >
+                                <input type="text" name="img[]" id="img3" required placeholder="Mã url 3" style="flex:1" value="<?= $img[2]; ?>" >
+                            </div><br>
+                            <div style="width:100%;display:flex;gap:10px">
+                                <input type="text" name="img[]" id="img4" required placeholder="Mã url 4" value="<?= $img[3]; ?>" >
+                                <input type="text" name="img[]" id="img5" required placeholder="Mã url 5" value="<?= $img[4]; ?>" >
+                            </div>
+                        </div>
+                        <!-- Link video đánh giá + Bộ nhớ  -->
+                        <div style="flex:2">
+                            <legend>Video đánh giá + Bộ nhớ + Giá tiền</legend><br>
+                            <div style="width:100%; display:flex;gap:30px">
+                                <!-- Link video đánh giá -->
+                                <div style="flex: 1;">
+                                    <label for="url">Đường dẫn video (URL)</label>
+                                    <input type="text" name="video[]" id="video1" required placeholder="Link video 1" value="<?= $video[0]; ?>" >
+                                    <label for="">Đường dẫn 2</label>
+                                    <input type="text" name="video[]" id="video2" required placeholder="Link video 2" value="<?= $video[1]; ?>" ><br><br>
+                                    <input type="text" name="video[]" id="video3" required placeholder="Link video 3" value="<?= $video[2]; ?>" ><br>
+                                </div>
+                                <!-- Link bộ nhớ sản phẩm -->
+                               <div style="flex:1">
+                                  
+                                    <div style="display:flex;gap:7%">
+                                        <div style="width:44.5%">
+                                            <label for="bonho">Bộ nhớ</label>
+                                            <input type="text" name="memory[0][bonho]" id="bonho1" required placeholder="VD: 64GB" value="<?= $memory[0]['bonho']; ?>" >
+                                        </div>
+                                         <div style="width:44%" >
+                                            <label for="giathanh">Giá thành</label>
+                                            <input type="number" name="memory[0][giathanh]" id="giathanh1" required placeholder="Giá tiền..." value="<?= $memory[0]['giathanh']; ?>" >
+                                        </div>
+                                    </div><label for="">Bộ nhớ</label>
+                                    <div style="display:flex;gap:10px">                   
+                                            <input type="text" name="memory[1][bonho]" id="bonho2" required placeholder="VD: 128GB" value="<?= $memory[1]['bonho']; ?>" >
+                                            <input type="number" name="memory[1][giathanh]" id="giathanh2" required placeholder="Giá tiền..." value="<?= $memory[1]['giathanh']; ?>" >
+                                    </div><br>
+                                    <div style="display:flex;gap:10px">
+                                            <input type="text" name="memory[2][bonho]" id="bonho3" required placeholder="VD: 512GB" value="<?= $memory[2]['bonho']; ?>" >                    
+                                            <input type="number" name="memory[2][giathanh]" id="giathanh3" required placeholder="Giá tiền..." value="<?= $memory[2]['giathanh']; ?>" >
+                                    </div>
+                               </div>                        
+                            </div>
+                            <input type="submit" value="Thêm thông tin" name="thongtin">
+                        </div>
+                    </form> 
+                </div>
+            <?php } else{ ?>
+                 <h2>Thông số phụ</h2>
                 <div style="width:97%;  gap:40px">
                    
                     <form action="<?= _WEB_ROOT ?>/Product/addDetailProduct" method="post" style="display:flex; gap:30px"> 
@@ -228,6 +288,7 @@
                         </div>
                     </form> 
                 </div>
+            <?php } ?>
             </div>
     </div>
 </div>

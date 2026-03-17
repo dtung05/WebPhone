@@ -13,4 +13,11 @@
             $query->execute([':masp' => $idProduct]);
             return $query->fetchAll();
         }
+        public function addMemory($memory){
+            $insert = implode(',',array_fill(0,count($memory)/3,"(?,?,?)"));
+            $sql = "INSERT INTO bonho(masp,bonho,gia)
+                    Values $insert";
+            $query = $this->conn->prepare($sql);
+            return $query->execute($memory);
+        }
     }
