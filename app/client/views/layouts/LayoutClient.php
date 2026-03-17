@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-        <link rel="stylesheet" href="<?= _WEB_ROOT; ?>/public/client/assets/css/Header_Footer.css">
+        <link rel="stylesheet" href="<?= _WEB_ROOT; ?>/public/AssetALL/css/Header_Footer.css">
         
         <?php if(!empty($style)){?>
             <link rel="stylesheet" href="<?= _WEB_ROOT; ?>/public/client/assets/css/<?= $style; ?>.css">

@@ -61,6 +61,7 @@
             ]);
             return $query->fetch();
         }
+        // Lấy ra list danh sách
         public function getListProductId($ListId){
             $placeholders = implode(',', array_fill(0, count($ListId), '?'));
             $sql = "SELECT sp.masp,tensp,sp.gia,mota as url ,sp.soluong as slkho,danhmuc_id
@@ -70,6 +71,7 @@
             $query->execute($ListId);
             return $query->fetchAll();
         }
+        // Tìm kiếm sản phẩm
         public function searchProduct($idProduct){
             $sql = "SELECT masp,tensp,gia,mota  ,soluong,danhmuc_id
                     FROM sanpham
@@ -80,5 +82,12 @@
                 ':tensp' => "%$idProduct%"
             ]);
             return $query->fetchAll();
+        }
+        // Thêm sản phẩm lên database
+        public function addProduct($product){
+            $sql = "INSERT INTO SANPHAM(masp, tensp,gia, mota, soluong, danhmuc_id)
+                    VALUES(:masp, :tensp, :gia, :mota , :soluong , :danhmuc_id)";
+            $query = $this->conn->prepare($sql);
+            return $query->execute($product);
         }
     }

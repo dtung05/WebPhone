@@ -38,12 +38,12 @@ Class App{
         }
         $role = $_SESSION['role'];
         if(file_exists('app/'.$role .'/controllers/'.$this->__controller.'.php')){
-            require_once('app/client/controllers/'.$this->__controller.'.php');
+            require_once('app/'.$role .'/controllers/'.$this->__controller.'.php');
             $controller = new $this->__controller(); // khởi tạo đối tượng
             if(method_exists($controller,$this->__action)){
               call_user_func_array([$controller, $this->__action], $this->__params);// gọi ra phương thức trong đối tượng
             }else{
-                 require_once 'app/client/views/error/404.php';
+                require_once 'app/client/views/error/404.php';
                 exit();
             }
         }

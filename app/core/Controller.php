@@ -2,6 +2,7 @@
 
 class Controller{
     protected static $conn;
+    private $role;
     public static function init($db_config){
        $connect = new Connect($db_config);
        self::$conn = $connect->getConnect();
@@ -9,10 +10,17 @@ class Controller{
     public static function getConn(){
        return self::$conn;
     }
+    public function __construct(){
+        if(empty($_SESSION['role'])){
+            $this->role = 'client';
+        }else{
+            $this->role = $_SESSION['role'];
+        }
+    }
     // Controller xử lý nhúng service
     public function callService($nameService){ // class  chứa logic xử lý
-        if(file_exists(_DIR_ROOT.'/app/client/services/'.$nameService.'.php')){
-            require_once _DIR_ROOT.'/app/client/services/'.$nameService.'.php';
+        if(file_exists(_DIR_ROOT.'/app/'.$this->role.'/services/'.$nameService.'.php')){
+            require_once _DIR_ROOT.'/app/'.$this->role.'/services/'.$nameService.'.php';
             if(class_exists($nameService)){
                 $Service = new $nameService();
                 return $Service;
@@ -33,31 +41,12 @@ class Controller{
     }
     // method view cần đổi 1 lần chuỗi ra value (key sang biến);
      public function callView($nameView, $data = []){
-        if(file_exists(_DIR_ROOT.'/app/client/views/'.$nameView.'.php')){
+        if(file_exists(_DIR_ROOT.'/app/'.$this->role.'/views/'.$nameView.'.php')){
             extract($data);
-            require_once _DIR_ROOT.'/app/client/views/'.$nameView.'.php';
+            require_once _DIR_ROOT.'/app/'.$this->role.'/views/'.$nameView.'.php';
             return true;
         }
         return false;
     }
-    // Gọi hàm service tới Staff
-    public function callServiceStaff($nameService){
-        if(file_exists(_DIR_ROOT.'/app/staff/services/'.$nameService.'.php')){
-            require_once _DIR_ROOT.'/app/staff/services/'.$nameService.'.php';
-            if(class_exists($nameService)){
-                $Service = new $nameService();
-                return $Service;
-            }
-        }
-        return false;
-    }
-    // Gọi hàm view của staff
-     public function callViewStaff($nameView, $data = []){
-        if(file_exists(_DIR_ROOT.'/app/staff/views/'.$nameView.'.php')){
-            extract($data);
-            require_once _DIR_ROOT.'/app/staff/views/'.$nameView.'.php';
-            return true;
-        }
-        return false;
-    }
+    
 } 

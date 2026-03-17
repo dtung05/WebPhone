@@ -19,12 +19,23 @@
             $Service = $this->callService('UserService');
             $dao = $this->callDAO('UserDAO');
             try{
-                 $Service->authLoginService($data,$dao);// Gọi service check 
+                 $check =$Service->authLoginService($data,$dao);// Gọi service check 
             }catch(PDOException $err){ // bắt lỗi
                 $_SESSION['thongbao'] = $err->getMessage();   
+            }if($check){
+                if($_SESSION['role'] == 'staff'){
+                    header ("location:"._WEB_ROOT.'/Product/index');
+                    exit;
+                }else{
+                    header ("location:"._WEB_ROOT.'/Home/index');
+                    exit;
+                }
+            }else{
+                 header ("location:"._WEB_ROOT.'/home');
+                exit;
             }
-            header ("location:"._WEB_ROOT.'/home');
-            exit;
+           
+            
         }
         // xử lý đăng xuất
         public function logout(){
