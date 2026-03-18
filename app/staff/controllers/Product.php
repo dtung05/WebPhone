@@ -86,4 +86,31 @@
             header("location: "._WEB_ROOT."/Product/index");
             exit;
         }
+        // Trang quản lý sản phẩm
+        public function ManageProduct(){
+            $productDao = $this->callDAO("ProductDAO");
+            $data['style'] = 'manageproduct';
+            $data['products'] = $productDao->getProductLimit(15);
+            $data['content'] = 'staff/manageProduct';
+            $this->callView('layouts/LayoutStaff' , $data);
+        }
+         public function ProductDetail($idProduct){
+           $service = $this->callService('ProductService');
+           $daoImg = $this->callDAO('ImgDAO');
+           $daoMemory = $this->callDAO('MemoryDAO');
+           $daoVideo = $this->callDAO('VideoDAO');
+           $daoProduct = $this->callDAO('ProductDAO');
+           $daoComment = $this->callDAO('CommentDAO');
+           $data = $service->ProductDetailSrevice($idProduct, $daoImg,$daoMemory,$daoVideo,$daoProduct,$daoComment);
+            if(!isset($data)){
+                $_SESSION['thongbao'] = 'Mã sản phẩm không hợp lệ';
+                header("location: "._WEB_ROOT.'/home');
+                exit;
+            }else{
+                $data['style'] = 'productdetail';
+                $data['script'] = 'quangcaosp';
+               $data['content'] = 'staff/ProductDetail';
+                $this->callView('layouts/LayoutStaff',$data);
+            }
+        }
     }

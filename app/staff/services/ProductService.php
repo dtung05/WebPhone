@@ -100,4 +100,33 @@
                     ];
             }
         }
+         public function ProductDetailSrevice($idProduct, $daoImg,$daoMemory,$daoVideo,$daoProduct,$daoComment){
+            try{
+                $data['product'] = $daoProduct->getProductDetail($idProduct);
+               
+              
+                    $data['memory'] = $daoMemory->getMemory($idProduct);
+                    $data['img'] = $daoImg->getImg($idProduct);
+                    $data['video'] = $daoVideo->getVideo($idProduct);
+                    $data['products'] = $daoProduct->getProductBanrd($data['product']['danhmuc_id'],null,5);
+                    $data['comment'] = $daoComment->getComment($idProduct);
+                    $data['star'] = $daoComment->getDetailComment($idProduct);
+                    if($data['star']['sumComment'] == 0 ){
+                        for($i = 0 ; $i < 5 ;$i++){
+                            $data['star']['tyle'][$i] = 0;
+                        }
+                    }else{
+                    // tỷ lệ phần trăm trên thanh đánh giá
+                    $data['star']['tyle'][0] = round($data['star']['one']/ $data['star']['sumComment'] *100);
+                    $data['star']['tyle'][1] = round($data['star']['two']/ $data['star']['sumComment']*100);
+                    $data['star']['tyle'][2] = round($data['star']['three']/ $data['star']['sumComment']*100);
+                    $data['star']['tyle'][3] = round($data['star']['four']/ $data['star']['sumComment']*100);
+                    $data['star']['tyle'][4] = round($data['star']['five']/ $data['star']['sumComment']*100);
+                    }
+                    
+                return $data;
+            }catch(PDOException $err){
+                $_SESSION['thongbao'] = $err->getMessage();
+            }
+        }
 }   
