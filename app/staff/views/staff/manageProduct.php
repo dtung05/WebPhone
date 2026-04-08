@@ -18,7 +18,7 @@
             <p class="sp-name"><?= $item['tensp']; ?></p>
             <p class="sp-price"><?= number_format($item['gia'],0,',','.'); ?> ₫</p>
             <div>
-                <a href="<?= _WEB_ROOT; ?>/Product/UpdateProduct/<?= $item['masp']?>">Sửa</a>
+                <a href="<?= _WEB_ROOT; ?>/Product/ViewUpdateProduct/<?= $item['masp']?>">Sửa</a>
                 <a href="<?= _WEB_ROOT; ?>/Product/DeleteProduct/<?= $item['masp']?>"
                    onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')">Xóa</a>
             </div>

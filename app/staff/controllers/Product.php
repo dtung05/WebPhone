@@ -90,7 +90,7 @@
         public function ManageProduct(){
             $productDao = $this->callDAO("ProductDAO");
             $data['style'] = 'manageproduct';
-            $data['products'] = $productDao->getProductLimit(15);
+            $data['products'] = $productDao->getProductLimit(12);
             $data['content'] = 'staff/manageProduct';
             $this->callView('layouts/LayoutStaff' , $data);
         }
@@ -112,5 +112,13 @@
                $data['content'] = 'staff/ProductDetail';
                 $this->callView('layouts/LayoutStaff',$data);
             }
+        }
+
+        // page sửa sản phẩm
+        public function ViewUpdateProduct($idProduct){
+            $data['product'] = $this->callDAO('ProductDAO')->getProductId($idProduct);
+            $data['detailproduct'] = $this->callDAO('ProductDetailDAO')->getDetailProduct($idProduct);
+            $data['content'] = 'staff/updateProduct';$data['style'] = 'addProduct';
+            $this->callView('layouts/LayoutStaff',$data);
         }
     }

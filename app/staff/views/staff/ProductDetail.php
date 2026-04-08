@@ -36,7 +36,7 @@
         <input type="hidden" name="masp" value="<?= $product['masp'];?>">
         <br><br>
        <div class="sp-action">
-    <a class="btn-update" href="<?= _WEB_ROOT ?>/Product/UpdateProduct/<?= $item['masp'] ?>">
+    <a class="btn-update" href="<?=_WEB_ROOT?>/Product/ViewUpdateProduct/<?=$product['masp'];?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
@@ -44,7 +44,7 @@
         Update
     </a>
     <a class="btn-delete"
-       href="<?= _WEB_ROOT ?>/Product/DeleteProduct/<?= $item['masp'] ?>"
+       href="<?= _WEB_ROOT ?>/Product/DeleteProduct/<?= $product['masp'] ?>"
        onclick="return confirm('Bạn có chắc muốn xóa sản phẩm này không?')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="3 6 5 6 21 6"/>

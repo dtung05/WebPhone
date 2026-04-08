@@ -52,26 +52,13 @@
 </ul>
     </div>
     <div style="flex:1;margin-left:20px" >
-        <div style="
-        text-align: center; 
-        margin-top: 17px; 
-        font-family: Arial, sans-serif;
-        color: #555;
-    ">
-        <div style="
-            font-size: 60px; 
-            color: #ccc; 
-            margin-bottom: 20px;
-        ">
-            &#128179;
-        </div>
+        <div style="text-align: center; margin-top: 17px; font-family: Arial, sans-serif;color: #555;">
+        <div style="font-size: 60px; color: #ccc; margin-bottom: 20px;">&#128179;</div>
         <h2 style="font-size:24px; margin-bottom:10px;">Hiện tại chưa có đơn hàng nào</h2>
         <p style="font-size:16px; color:#888;">
             Khi có đơn hàng mới, bạn sẽ thấy danh sách ở đây.
         </p>
-        <img src="https://cdn2.cellphones.com.vn/x,webp/media/cart/Cart-empty-v2.png" 
-             alt="Đơn hàng trống" 
-             style="width:150px; margin-top:20px;">
+        <img src="https://cdn2.cellphones.com.vn/x,webp/media/cart/Cart-empty-v2.png" alt="Đơn hàng trống" style="width:150px; margin-top:20px;">
     </div>
     </div>
         </div>
@@ -106,7 +93,6 @@
         <div class="sua">Sửa</div>
         <div class="huydo">Xóa đơn</div>
     </div>
-
        <?php if( mysqli_num_rows($ketqua1) > 0){
        while($row = mysqli_fetch_assoc($ketqua1)){?>
             <div class="donhang-row">
@@ -120,7 +106,6 @@
             <div class="sua"><a href="suadonhang.php?id=<?php echo $row['id']; ?>">Sửa</a></div>
             <div class="huydo"><a href="xoadonhang.php?id=<?php echo $row['id']; ?>">Xóa</a></div>
         </div>
-
         <?php } ?>
        </div>
      <?php }
@@ -185,18 +170,13 @@
             <div class="soluong"><?php echo $row['soluong']; ?></div>
             <div class="tongtien"><?php echo number_format($row['tongtien'],0,',','.').'₫'; ?></div>
             <div class="trangthai">Hoàn tất</div>
-            
         </div>
-
         <?php } ?>
        </div>
      <?php }
      else{
-        echo "<div> <p style = 'text-align:center;padding:10px'>Hiện tại chưa có đơn hàng nào cần xử lý</p></div>"; }
-    ?>
+        echo "<div> <p style = 'text-align:center;padding:10px'>Hiện tại chưa có đơn hàng nào cần xử lý</p></div>"; }?>
     </div>
-
-
     </div>
  <?php }include "../includes/footer.php";?>
 </body>
